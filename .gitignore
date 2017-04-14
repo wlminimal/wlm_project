@@ -59,7 +59,7 @@ node_modules/
 .env
 
 # User-uploaded media
-wlm/media/
+wlm_project/media/
 
 
 

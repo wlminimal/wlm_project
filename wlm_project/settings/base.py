@@ -14,13 +14,16 @@ from __future__ import absolute_import, unicode_literals
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import join, dirname, exists
 import environ
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-env = environ.Env(DEBUG=(bool, False),)
-env.read_env()
+env = environ.Env()
+env_file = join(BASE_DIR, '.env')
+if exists(env_file):
+    environ.Env.read_env(str(env_file))
 
 
 

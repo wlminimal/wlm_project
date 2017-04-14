@@ -22,6 +22,11 @@ AWS_AUTO_CREATE_BUCKET = True
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 
+# URL that handles the media served from MEDIA_ROOT, used for managing
+# stored files.
+MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+
+
 # AWS cache settings, don't change unless you know what you're doing:
 AWS_EXPIRY = 60 * 60 * 24 * 7
 
@@ -48,9 +53,6 @@ RAVEN_MIDDLEWARE = ['raven.contrib.django.raven_compat.middleware.SentryResponse
 MIDDLEWARE = RAVEN_MIDDLEWARE + MIDDLEWARE
 
 
-# URL that handles the media served from MEDIA_ROOT, used for managing
-# stored files.
-MEDIA_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 SECURE_HSTS_SECONDS = 60
 SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
