@@ -6,7 +6,7 @@ import logging
 from .base import *
 
 DEBUG = False
-SECRET_KEY = evn('DJANGO_SECRET_KEY')
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 INSTALLED_APPS += ['gunicorn', ]
 # STORAGE CONFIGURATION
 # ------------------------------------------------------------------------------
