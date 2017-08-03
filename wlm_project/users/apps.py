@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class UsersConfig(AppConfig):
-    name = 'wlm_project.users'
+    name = '{{ project_name }}.users'
     verbose_name = "Users"
 
     def ready(self):

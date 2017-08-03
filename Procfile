@@ -1,1 +1,1 @@
-web: gunicorn wlm_project.wsgi:application
+web: gunicorn {{ project_name }}.wsgi:application

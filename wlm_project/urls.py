@@ -17,7 +17,7 @@ urlpatterns = [
 
     url(r'^search/$', search_views.search, name='search'),
         # User management
-    url(r'^users/', include('wlm_project.users.urls', namespace='users')),
+    url(r'^users/', include('{{ project_name }}.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
 
     # For anything not caught by a more specific rule above, hand over to
