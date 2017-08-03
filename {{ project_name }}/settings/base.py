@@ -36,6 +36,7 @@ if exists(env_file):
 INSTALLED_APPS = [
     'home',
     'search',
+    'dashboard',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
